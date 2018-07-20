@@ -53,8 +53,8 @@ done
 if [ "$AK" != "" -a "$SK" != "" ]; then
   for file in $DIR/confs/* ; do
     temp_file=`basename $file`
-    sed -i 's/\"pandora_ak\": <pandora_ak>/\"pandora_ak\": '$AK'/' $DIR/confs/$temp_file
-    sed -i 's/\"pandora_sk\": <pandora_sk>/\"pandora_sk\": '$SK'/' $DIR/confs/$temp_file
+    sed -i 's/\"pandora_ak\": <pandora_ak>/\"pandora_ak\": \"'$AK'\"/' $DIR/confs/$temp_file
+    sed -i 's/\"pandora_sk\": <pandora_sk>/\"pandora_sk\": \"'$SK'\"/' $DIR/confs/$temp_file
   done
   logkitPID="$(ps -aux | grep "logkit" | grep -v grep | awk '{print $2}')"
   if [ "$logkitPID" != "" ]; then

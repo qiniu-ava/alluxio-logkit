@@ -10,7 +10,7 @@ if [ ! -d "./_package/" ];then
   rm logkit.conf
   mkdir confs && mv ../confs/* confs && rm -r ../confs
   mkdir script && mv ../script/* script && rm -r ../script
-  mv ../logkit.sh ./
+  mv ../start.sh ./
   mv ../logkit.conf ./
 else
   echo "logkit has been installed"
