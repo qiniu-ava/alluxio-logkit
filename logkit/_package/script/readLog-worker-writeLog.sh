@@ -1,7 +1,7 @@
 #!/bin/bash
 logTime=2018-07-01T00:00:00.689381000Z #SAVE_TIME
-dockerName="alluxio-worker"
-dockerID=`docker ps --no-trunc | awk '$NF=="alluxio-worker"{print $1}'`
+dockerName="alluxio-worker-writer"
+dockerID=`docker ps --no-trunc | awk '$NF=="alluxio-worker-writer"{print $1}'`
 
 if [ "$dockerID" != "" ]; then
     newTime=`docker logs --timestamps --tail 1 $dockerID | awk '{print $1}'`
